@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="estilo.css"/>
+    <link rel="stylesheet" href="media.css"/>
+
+</head>
+<!--Para fazer a ligação de uma pasta exclusiva dos documentos JS criamos o script definindo o local do arquivo
+ou pasta como no exemplo abaixo e teremos uma pasta conectada ao HTML para trabalhamos em conjunto com JS-->
+<script language="javascript" src="_javascript/funcoes.js"></script>
+    
+
+
+<body>
+
+    
+<div id="interface">
+
+    <header id="cabecalho">
+
+    <hgroup>
+    <h1>Google Glass</h1>
+    <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    
+    <img id="icone" src="C:\Users\beracode\Desktop\Curso_HTML\projeto-glass-html5\_imagens\multimidia.png">
+
+<nav id="menu">    
+    <h1>Menu Principal</h1>
+    <ul type="disc">
+    <li onmouseover="mudaFoto('home.png')" onmouseout="mudaFoto('multimidia.png')"><a href="index.html">Home</a></li>
+    <li onmouseover="mudaFoto('especificacoes.png')" onmouseout="mudaFoto('multimidia.png')"><a href="specs.html">Especificações</a></li>
+    <li onmouseover="mudaFoto('fotos.png')" onmouseout="mudaFoto('multimidia.png')"><a href="fotos.html">Fotos</a></li>
+    <li onmouseover="mudaFoto('multimidia.png')" onmouseout="mudaFoto('multimidia.png')"><a href="multimidia.html">Multimídia</a></li>
+    <li onmouseover="mudaFoto('contato.png')" onmouseout="mudaFoto('multimidia.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+    </ul>
+</nav>
+    
+    </header>
+
+    <!--Crio uma section para trabalhar essa parte do código de forma separada-->
+<section id="corpo-full">
+    <article id="noticia-principal">
+        <header id="cabecalho-artigo">
+        <hgroup>
+        <h3>Glass >Multimídia</h3>
+        <h1>Sons e Vídeos</h1>
+        <h2>por Gustavo Guanabara</h2>
+        <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+        </hgroup>
+        </header>
+<!--Criando uma div com id para trabalhar o CSS do áudio e vídeo que são criado no próprio HTML com as TAGS
+audio e video-->
+<div id="tv-radio">
+    <!--Criamos IDs para identificar as TAGs no CSS e trabalhar de forma separada sem alterar a outra-->
+    <!--Mesmo sendo inserido a TAG source para inserir o arquivo de áudio nada vai aparecer na tela se não
+    for inserido o CONTROLS dentro da TAG audio conforme está abaixo-->
+    <!--Obs.: O formato do player exibido na tela depende do navegador, também, se houver incompatibilidade 
+    de áudio, como mp3 e outros que não sejam conhecidos pelo navegador, podemos converter os áudio em ferramentas 
+    como o fotmatfactore-->
+    <audio id="musica" controls>
+        <!--Inserido o arquivo de áudio e o type é o tipo de arquivo-->
+        <!--Foi inserido o mesmo arquivo em três formatos para o áudio rodar em qualquer navegador
+        porém eu não inseri na pasta do site os outros dois arquivos, apenas coloquei abaixo conforme foi feito
+        na aula para aprender-->
+        <source src="2009-lovers-carvings-bibio.mp3" type="audio/mpeg"/>
+        <source src="2009-lovers-carvings-bibio.m4a" type="audio/x-aac"/>
+        <source src="2009-lovers-carvings-bibio.ogg" type="audio/ogg"/>
+        <!--Caso o usuário não tenha um navegador compatível ou não atualizado, podemos inserir uma mensagem como
+        está abaixo, ela não vai aparecer no navegador conforme teste feito a não ser que nenhum dos
+        áudios ou vídeos rodem-->
+        Desculpe, mas não foi possível carregar o áudio.
+    </audio>
+    <!--O processo para vídeo é o mesmo que para áudio-->
+    <!--Quando o vídeo é inserido ele pode aparecer na tela antes de rodar sem imagem de fundo e para não ficar com 
+    uma imagem feia na página, podemos inserir uma imagem na tela do vídeo como imagem antes do play ser apertado
+    inserindo o POSTER na TAG video e o arquivo da imagem-->
+    <video id="filme" controls poster="video-mini03.jpg">
+        <source src="getting-started.mp4" type="video/mp4"/>
+        <source src="getting-started.webm" type="video/webm"/>
+        <source src="getting-started.ogv" type="video/ogg"/>
+        Desculpe, mas não foi possível carregar o vídeo.
+    </video>
+</div>
+
+
+<footer id="rodape">
+
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara
+    <br><a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | 
+    <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+    
+    </footer>
+    
+    
+    
+    </div>
+    </body>
+    
+    </html>

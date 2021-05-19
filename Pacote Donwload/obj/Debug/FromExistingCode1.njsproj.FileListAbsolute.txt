@@ -1,0 +1,3 @@
+C:\Users\beracode\Desktop\Curso_HTML\obj\Debug\FromExistingCode1.njsprojAssemblyReference.cache
+C:\Users\beracode\Desktop\Curso_HTML\obj\Debug\FromExistingCode1.njsproj.CoreCompileInputs.cache
+C:\Users\beracode\Desktop\Curso_HTML\bin\Microsoft.NodejsTools.WebRole.dll

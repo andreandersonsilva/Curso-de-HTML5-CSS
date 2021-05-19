@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+/* No site https://fonts.google.com/ definimos a fonte, vamos no @import da fonte e copiamos o código CSS colando no 
+código como segue abaixo. OBS.: ele já vem pronto no formato abaixo */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+
+/* Definindo uma determinada fonte da pasta*/
+@font-face {
+    /* Após inserir o font-face devemos inserir os códigos abaixo, no font-family definimos manualmente um nome 
+    pra fonte que vamos utilizar*/
+    font-family: "FonteLogo" ;
+    /*Inserimos o arquivo da fonte / OBSERVAÇÃO: Lembrar de inserir _ antes do nome da pasta, caso não seja inserido
+    não irá encontrar os arquivos dentro da pasta (Já fiz esse teste)*/
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+p {
+    text-align:justify;
+    text-indent: 50px;
+}
+
+header#cabecalho img#icone {
+    position:absolute;
+    left: 1000px;
+    top: 70px;
+}
+
+body{
+    font-family: arial, sans-serif;
+    background-color: #dddddd;            
+    color: RGBA(0, 0, 0, 1);
+}
+
+/* Trabalhando com o cabeçalho 
+Ajustando o conteúdo dentro desta interface*/
+div#interface {
+
+    width: 1000px;
+    background-color: white;
+    margin: -20px auto 0px auto;
+    /* BOX-SHADOW - Cria uma sombra
+    deslocamento lateral / deslocamento vertical / espalhamento da sobra / cor da sombra */
+    box-shadow: 0px 0px 10px black;
+    padding: 10px 10px 10px 10px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+/* Para formatar os links na hora que clica */
+a {
+    color: #606060;
+    text-decoration: none;
+}
+
+/* Cria um subllinhado no link quando passa o mouse*/
+a:hover {
+    text-decoration:underline;
+}
+
+header#cabecalho {
+    /* definindo uma linha para a borda / Cor / Tipo de linha*/
+    border-bottom: 1px #606060 solid;
+    /* definindo altura do cabeçalho */
+    height: 150px;
+    /*Inserindo uma imagem no cabeçalho da pasta de imagens para o site 
+    Como a imagem é pequena, com o background ele vai preencher todo espaço com ela, para remover os excesso
+    usamos o no-repeat / para ajustar, utilizamos mais dois parâmetros em PX para definir o deslocamento lateral
+    e vertical */
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+    
+
+}
+
+/* Definindo os títulos dentro do cabeçalho - Vou criar o ID objeto header#cabecalho e definir em qual vou mexer como
+no exemplo abaixo no caso H1 */
+
+header#cabecalho h1 {
+    /* Ao inserir o tipo de fonte do arquivo, devemos colocar o nome entre aspas*/
+    /* O usuário não irá precisar ter o arquivo da fonte instalado no seu PC, o próprio navedaor irá buscar o arquivo
+    instala-lo e colocar na tela na hora de buscar o site*/
+    font-family: "FonteLogo",sans-serif;
+    font-size: 30px;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    /* PADDING define o espaço interno */
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+/* Formatando o cabeçalho H2 */
+header#cabecalho h2 {
+    /* No exemplo abaixo na font-family foi alterado a fonte e inserido o código do google fontes */ 
+
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15pt;
+    color: #888888;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+/* Comentários */
+
+/* Criação de classe*/
+
+figure.foto_legenda{
+    position: relative;
+    /* define a posição do container da imagem*/
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+/* Definindo sombra, horizontal, vertical, espalhamento e cor */
+
+}
+
+/* Determinando que a borda seja envolvida na imagem */
+figure.foto_legenda img {
+
+    width: 100%;
+    height: 100%
+
+}
+
+/* Legenda */
+
+figure.foto_legenda figcaption {
+    /* Criando opacidade na legenda*/
+    opacity:0;
+    position:absolute;
+    top:0px;
+    /* Cria uma transparência no fundo preto*/
+    background-color: rgba(0,0,0,0.4);
+    color:white;
+    width: 100%;
+    height: 100%;
+    /* Criando um espaço */
+    padding: 10px;
+    /* Ajustar o padding na imagem*/
+    box-sizing:border-box; /* Cria um Box dentro da borda */
+    /* informando tempo de transição da opacidade*/
+    transition: opacity 1s;
+
+}
+
+figure.foto_legenda:hover figcaption{
+    /* O HOVER vai dar um efeito quando passar o mouse na imagem*/
+    opacity:1;
+}
+
+/* Formatação do menu */
+
+/* Para o menu flutuar, devemos tranformar ele num bloco */
+
+nav#menu {
+
+    display:block;
+}
+
+/* Sempre que for ID colocamos a # */
+nav#menu ul{
+    /*some com os marcadores que estavam no menu*/
+    list-style: none;
+    /* Transforma em maiúsculos */
+    text-transform:uppercase;
+    /* Para que a lista vire um bloco flutuante devemos
+    utilizar a posição absoluta, pois com ela conseguimos
+    movimentar o bloco ou menu em todo o site.
+    Obs.: com a relativa conseguimos movimentar apenas nos
+    cantos do bloco */
+
+    position:absolute;
+    /* Após definir a position e utilizo o top e left 
+    para determinar a posição do menu */
+    top: -20px;
+    left: 700px;
+
+}
+
+/* Para trabalhar apenas com os itens da lista é criado
+um novo id (pode ser com o mesmo nome) apenas para os
+"li" da lista */
+
+nav#menu li {
+    /* o parêmetro abaixo salva os itens numa mesma linha */
+    display:inline-block;
+    /*cor de fundo */
+    background-color:gray;
+    /* parâmetro padding cria um espaço dentro da caixa */
+    padding:10px;
+    margin:2px;
+
+    /* Criando uma transição para a mudança de cor no código HOVER */
+    transition: background-color 1s;
+}
+
+/* Criando efeitos no Menu 
+HOVER cai criar um efeito de transição conforme os códigos que inserir no menu*/
+
+nav#menu li:hover {
+    background-color: #606060;
+
+}
+
+/* Inserindo o display eu removo o item menu principal que está 
+escrito, ele apaga da tela, mas a descrição ainda
+continua no código HTML. */
+nav#menu h1{
+    display:none;
+}
+
+/* Formatar os objetos do menu, "A" simboliza os links "ANCORA" */
+nav#menu a {
+    color: black;
+    text-decoration: none;
+
+}
+
+nav#menu a:hover {
+    color: #ffff;
+    text-decoration: underline;
+    
+}
+
+/* Após definir a section no HTML eu uso o CSS para formatar da forma que desejo */
+/* Como defino os tamanhos dos blocos com o width e, seguida eu devo determinar onde cada bloco vai ficar, no exemplo
+abaixo utilizando o float de flutuar, um fica na left (esquerda) outro na right (direita) */
+/* Para utilizar o float os objetos devem estar configurados para serem mostrados em blocos como no exemplo abaixo
+utilizando o display: block */
+section#corpo {
+    display: block;
+    width: 500px;
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 15px;
+
+}
+
+/* Criamos o ID do ARTICLE em HTML e podemos formatar individualmente o que está dentro dele no HTML
+no exemplo abaixo vamos formatar todos os H2 informados dentro do ARTICLE NOTICIA-PRINCIPAL*/
+article#noticia-principal h2 {
+    font-size:12pt;
+    color: #606060;
+    background-color: #dddddd;
+    /* Padding dá um espaçamento interno, sendo que a ordem é: CIMA, DIREITA, BAIXO e ESQUERDA*/
+    padding: 5px 0px 5px 10px;
+    /* MARGIN dá um espaçamento externo, sendo que a ordem é: CIMA, DIREITA, BAIXO e ESQUERDA*/
+    margin: 10px 0px 10px 0px;
+
+}
+
+/* Criamos o ID para formatar de forma individual o que desejamos, no exemplo abaixo será formatado o H1*/
+header#cabecalho-artigo h1 {
+    /* Neste exemplo vamos utilizar a fonte que foi exportada do google (obs.: deve ser inserida entre aspas*/
+    font-family: "FonteLogo", sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Criamos o ID para formatar de forma individual o que desejamos, no exemplo abaixo será formatado o H2*/
+header#cabecalho-artigo h2 {
+    font-size: 13pt;
+    color: #cecece;
+    background: white;
+    margin: 0px;
+
+}
+
+/* Criamos o ID para formatar de forma individual o que desejamos, no exemplo abaixo será formatado o H3*/
+header#cabecalho-artigo h3 {
+    font-size: 12pt;
+    color: #606060;
+  
+}
+
+/* Após criar o class="direita" dentro H3 eu crio uma formatação de classe generia pra .direita */
+.direita {
+    text-align: right;
+}
+
+table#tabelaspec {
+    border: 1px solid #606060;
+    /* border-spacing define o espaço entre as células */
+    border-spacing: 0px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+table#tabelaspec td {
+    border: 1px solid #606060;
+    padding: 10px;
+    
+}
+
+/* Para trabalhar com as classes criadas eu crio o novo ID para o td da classe CE (coluna esquerdo) (O TD é a identificação da linha 
+da tabela e ele deve ser configurado como está abaixo para podermos trabalhar o CSS */
+table#tabelaspec td.ce {
+    color: #ffffff;
+    background-color: #606060;
+    vertical-align:top;
+    font-weight:bold;
+
+}
+
+/* Seguibdo o exemplo acima, fazemos da mesma forma para o CD (coluna direito) que foi criado*/
+table#tabelaspec td.cd {
+    background-color: #cecece;
+
+}
+
+table#tabelaspec caption{
+    color: #888888;
+    font-size:13pt;
+    font-weight:bolder;
+}
+
+/* Para definir o SPAN devemos incluir do ID todo o caminho para o CSS reconhecer (CAPTION SPAN)*/
+table#tabelaspec caption span{
+    /* O DISPLAY:BLOCK vai informar que quero desconectar o que está no SPAN do texto*/
+    display: block;
+    float:right;
+    color: #000000;
+    font-size:8pt;
+    margin-top:10px;
+}
+
+aside#lateral {
+    display: block;
+    width: 450px;
+    float: right;
+    background-color: #dddddd;
+    padding:10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+/* Formatando os H1 e H2 no ASIDE*/
+aside#lateral h1 {
+    font-family: "FonteLogo", sans-serif;
+    font-size:20pt;
+    color: #606060;
+    margin-top:0px;
+}
+
+aside#lateral h2 {
+    background-color: #606060;
+    font-size:15pt;
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* No caso do rodapé, como eu tenho um seção flutuando a esquerda e um conteúdo periférico flutuando a direita
+o footer tem que limpar toda a divisão que foi feita, utilizamos o claer:both (limpa a configuração dos dois lados)
+ajusta o conteúdo do rodapé no lugar correto */
+footer#rodape {
+    clear:both;
+    border-top: 1px solid #606060;
+}
+
+/* Abaixo eu crio um novo ID para o rodape onde vou trabalhar com o texto inserido no caso como ele está com o ID (P)
+eu crio o ID rodape P para alinhar o texto como no exemplo abaixo, se for o caso eu posso fazer outras modificações
+neste ID */
+
+footer#rodape p {
+    text-align: center;
+}
+
+
+

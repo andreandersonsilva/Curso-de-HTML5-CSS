@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* Aqui foi criado as dimensões da área onde inseri a imagem abaixo na página para em seguida trabalhar posicionando
+os players dentro das imagens*/
+div#tv-radio{
+
+    width: 900px;
+    height: 580px;
+    margin: auto;
+    background: url("radio-tv.png") no-repeat;
+}
+
+/* Ajustando o display na imagem do rádio*/
+audio#musica{
+
+    display: block;
+    position:relative;
+    /* Com os comandos abaixo eu posiciono o display na parte que desejo da imagem */
+    left:575px;
+    top:490px;
+    width:300px;
+}
+
+/* Ajustando o vídeo na imagem da TV / Mesmas configurações do áudio, porém com DIVs diferentes e nomeadas
+para poder trabalhar individualmente no CSS */
+video#filme{
+
+    display:block;
+    position:relative;
+    left:90px;
+    top:70px;
+    width:440px;
+}

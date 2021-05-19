@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+p {
+    text-align:justify;
+    text-indent: 50px;
+}
+
+body{
+
+    background-color: white;            
+    color: RGBA(0, 0, 0, 1);
+}

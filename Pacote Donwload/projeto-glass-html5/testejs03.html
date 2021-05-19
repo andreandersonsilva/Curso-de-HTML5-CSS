@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-08">
+<title>Teste JavaScript</title>
+
+<script>
+    /* Para que o programa deixe a lâpada permanentemente quebrada após a  solicitação da ação criamos a variável abaixo para manter a lâpada 
+    no estado de quebrada como é feita a solicitação */
+    var quebrada = false;
+    /* No mudaLampada eu defino o parametro de nome TIPO para ligar os parâmetros definidos no 
+    HTML abaixo */
+    function mudaLampada(tipo){
+
+        if (!quebrada){
+            document.getElementById("Luz").src = "_imagens/" + tipo + ".jpg";
+            if (tipo == 'lampada-quebrada') {
+                quebrada = true;
+            }
+
+        }
+    }
+</script>
+</head>
+<body>
+    <hi>Acenda a lâmpada</hi>
+    <!--Para alterar as imagens conforme ação do mouse eu defino um parâmentro para cada ação
+    como foi feito abaixo incluindo os valores 1, 2 e 3 após os mudaLampada / Na seuqnecia eu
+    vou definir um parâmetro para os valores no código JS-->
+    <img src="lampada-apagada.jpg" id="Luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-08">
+    <title>Teste JavaScript</title>
+    
+    <script>
+        /* Pro javaScript existe diferença entre maiúsculo e minúsculo */
+        /* Tudo que estiver entre () - São Parâmetros */
+        /* Tudo que estiver entre {} - São Códigos */
+        /* Função criada para dar os efeitos nas imagens*/
+        function acendeLampada() {
+            document.getElementById("Luz").src = "lampada-acesa.jpg";
+        }
+
+        function apagaLampada() {
+            document.getElementById("Luz").src = "lampada-apagada.jpg";
+        }
+
+        function quebraLampada() {
+            document.getElementById("Luz").src = "lampada-quebrada.jpg";
+
+        }
+    </script>    
+
+</head>
+
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <!-- O onclick inserido cria uma alerta com o clique do mouse no caso da imagem inserida que neste exemplo vai aparecer um alerta  escrito
+    "Lâmpada Acendeu"-->
+    <!-- onmousemove mostra o pop-up quando passa o mouse por cima da imagem-->
+    <!--Chamadas diferentes para as ações que desejamos no código-->
+    <img src="lampada-apagada.jpg" id="Luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()"/>
+</body>
+
+</html>

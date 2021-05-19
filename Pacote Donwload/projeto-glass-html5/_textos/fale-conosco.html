@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="form.css"/>
+    <link rel="stylesheet" href="estilo.css"/>
+   <!--Foi inserido o script do java script-->
+    <script language="javascript" src="funcoes.js"></script>
+    <!--Neste caso foi inserido o valor pra calcular na caixa total no fim da página o código em java script 
+    assim que o usuário inserir as quantidades pois o valor do óculos é fixado em 1500-->
+    <script>
+        function calc_total(){
+            var qtd = parseInt(document.getElementById("cQtd").value);
+            tot = qtd*1500;
+            document.getElementById("cTot").value=tot;
+        }
+    </script>
+
+</head>
+<!--Para fazer a ligação de uma pasta exclusiva dos documentos JS criamos o script definindo o local do arquivo
+ou pasta como no exemplo abaixo e teremos uma pasta conectada ao HTML para trabalhamos em conjunto com JS-->
+<script language="javascript" src="_javascript/funcoes.js"></script>
+    
+
+
+<body>
+
+    
+<div id="interface">
+
+    <header id="cabecalho">
+
+    <hgroup>
+    <h1>Google Glass</h1>
+    <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    
+    <img id="icone" src="contato.png">
+
+<nav id="menu">    
+    <h1>Menu Principal</h1>
+    <ul type="disc">
+    <li onmouseover="mudaFoto('home.png')" onmouseout="mudaFoto('contato.png')"><a href="index.html">Home</a></li>
+    <li onmouseover="mudaFoto('especificacoes.png')" onmouseout="mudaFoto('contato.png')"><a href="specs.html">Especificações</a></li>
+    <li onmouseover="mudaFoto('fotos.png')" onmouseout="mudaFoto('contato.png')"><a href="fotos.html">Fotos</a></li>
+    <li onmouseover="mudaFoto('multimidia.png')" onmouseout="mudaFoto('contato.png')"><a href="multimidia.html">Multimídia</a></li>
+    <li onmouseover="mudaFoto('contato.png')" onmouseout="mudaFoto('contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+    </ul>
+</nav>
+    
+      
+
+
+
+    </header>
+
+    <!--Crio uma section para trabalhar essa parte do código de forma separada-->
+<section id="corpo-full">
+    <article id="noticia-principal">
+        <header id="cabecalho-artigo">
+        <hgroup>
+        <h3>Glass > Fotos</h3>
+        <h1>Galeria de Imagens do Google Glass</h1>
+        <h2>por Gustavo Guanabara</h2>
+        <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+        </hgroup>
+        </header>
+
+<!--Método post é um método mais seguro e lento e o GET mais rápido e menos seguro pois exibe dados na barra
+do endereço do link, conselho de usar o post para casos que envolvam senha e outros / 
+ACTION é para onde os dados serão enviados (ACTION mais simples é enviar os dados por email com a cláusula mailto: e 
+o email em seguida. OBS.: O correto é utilizar um banco de dados com outra liguagem de programação, pois
+no caso abaixo o método mailto serve para quem tem um outlock ou sistema paracedo instalado e isso não
+é a melhor forma de guadar os dados)-->
+
+<!--Para criar o cálculo dos óculos no final eu vou utilizar o java Script inserindo a tag oninput e nomeando
+como calc-total() para trabalhar o arquivo neste caso no head criando um script pro java script-->
+<form method="post" id="fContato" action="mailto:andre.anderson.silva@gmail.com" oninput="calc_total();">
+
+    <!--Criado o fieldset ele cria uma borda em volta do que foi demarcado 
+        e o legend ele dá destaque ao que ficou dentro das tags nesta borda.-->
+    <!--Criei um ID para cada fieldset para trabalhar o CSS-->    
+<fieldset id="usuario">
+<legend>Identificação do Usuário</legend>
+<!--Para inserir um espaço para digitar algum valor devemos utilizar o INPUT do tipo TEXT
+definir um nome e um ID conforme está abaixo-->
+<!--Para definir o tamanho da caixa utilizamos o size e maxlength para a quantidade de caracteres permitida na caixa
+placeholder informa dentro da caixa ao usuário o que ele deve inserir-->
+    <p><label for="cNome">Nome: </label> <input type="text" name="tNome" id="cNome" size="20" maxlength="20" placeholder="Nome Completo" /></p>
+    <p><label for="cSenha">Senha: </label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="Senha"></p>
+    <p><label for="cMail">E-mail: </label><input type="email" name="tMail" id=cMail size="20" maxlength="40" placeholder="Digite o E-mail"></p>
+    <!--Criado outro fieldset dentro do principal para SEXO com outro ID para o CSS-->
+    <fieldset id="sexo"><legend>Sexo:</legend>
+        <!--No caso do radio o nome deve ser igul, pois estão no mesmo grupo e como no exemplo abaixo ele
+        vai criar uma bolinha para selecionar em cada um dos genêros, ao clicar em uma a outra desabilita
+        se os nomes forem diferentes ele vai deixar habilitar as duas e não vai deixar desabilitar,
+        PORÉM CADA UMA COM SEU ID DIFERENTE PARA TRABALHAR O CSS INDIVIDUAL-->
+        <!--O LABEL faz o vínculo do nome com a bolinha do RADIO, ao clicar no nome ele vai reconhecer a opção
+        como se estivesse clicando diretamente na bolinha, ajuda para facilitar o que vc vai habilitar e com
+        isso fazemos a ligação através do ID criado no caso cMasc e cFem-->
+
+        <!--Posso inserir um CHECKED para definir uma das opções já marcadas quando o formulário for aberto
+        não impedindo do usuário marcar a outra opção-->
+        <input type="radio" name="tSexo" id="cMasc" checked> <label for="cMasc">Masculino</label></br>
+        <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+    </fieldset>
+    <p><input type="date" name="tDate" id="cDate">Data de Nascimento:</p>
+
+</fieldset>
+
+<!--Trabalhando o campo endereço-->
+<fieldset id="endereco">
+<legend>Endereço do Usuário</legend>
+    <p>Logradouro: <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av., Travessa..."></p>
+    <p>Número: <input type="number" name="tNum" id="cNum" min="0" max="999999"></p>
+    <!--Para o estado foi inserido o labeç e no lugar do input foi inserido um select com um nome e id que
+    deve ser o mesmo do for do label e abaixo inserido opções de estados no option entre o select-->
+    <p><label for="cEst">Estado: </label><select name="tEst" id="cEst">
+
+        <!--OPTGROUP eu separo os estados por região neste caso mas posso utilizar essa função para outros grupo
+        caso seja necessário-->
+        <optgroup label="Região Sudeste">
+        <!--Podemos inserir valores com o VALUE=exemplo RJ para rio de janeiro para no BD aparecer esta informação
+        no lugar das palavras Rio de Janeiro-->
+            <option value="RJ">Rio de Janeiro</option>
+            <!--Podemos deixar uma opção fixa na caixa inserindo o selected em qual vc deseja que apareça na hora
+            que a página for carregada-->
+            <option value="SP" selected>São Paulo</option>
+            <option value="MG">Minas Gerais</option>
+        </optgroup>
+
+        <optgroup label="Região Sul">
+            <option value="PR">Paraná</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="RS">Rio Grande do Sul</option>
+        </optgroup>
+    </select></p>
+    <p><label for="cCid">Cidade: <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua cidade" list="cidades"></label></p>
+    <!--Para as cidade podemos utilizar o DATALIST (Iserido ID identificador) e conform está abaixo não
+    é necessário incluir o nome da cidade entre as tags e sim dentro dela no value-->
+    <!--Fazemos a ligação do DATALIST com o estado dentro do label inserindo o ID LIST com o ID cidades no caso-->
+    <datalist id="cidades">
+        <option value="Rio de Janeiro"></option>
+        <option value="Nova Iguaçu"></option>
+        <option value="Niteroi"></option>
+    </datalist>
+</fieldset>
+
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência:</label>
+    <!--Neste exemplo eu utilizei o type range para criar uma barra de deslizar para este exemplo, defini o 
+    valor mínimo e máximo e o step que é o salto que a barra vai dar, este valor é de livre escolha-->    
+    Mín <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"> Máx</p>
+    <!--Para o texto eu defini uma textarea onde ele vai criar uma área para o texto que será digitado e defino
+    oa parâmetros como quantidade de colulas e linhas que serão exibidas junto com os demais parãmetros
+    padrão-->
+    <p><label for="cMsg">Mensagem:</label>
+    <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Digite seu texto">
+
+    </textarea></p>
+</fieldset>
+
+<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+    <p>
+        <!--Foi criado o tipo checkbox para clicar na opção desejada e com o checked para ao carregar a página
+        já deixar a opção habilitada-->
+    <input type="checkbox" name="tPed" id="cPed" checked><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <!--Na cor eu defino o tipo color e se desejar pode ser inserido um valor padão com o value ao
+    carregar a página-->
+    <p>Cor: <label for="cCor"><input type="color" name="tCor" id="cCor" value="#0000FF"></label></p>
+    <!--Quantidade foi definido o tipo number com os valores mínimos e máximos e um value inicial de zero-->
+    <p><label for="cQtd">Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></p>
+    <!-- Para o preço no caso posso utilizar o tipo text e por fim neste caso utilizo o readonly que não permite 
+    que o usuário digite na caixa pois ela deve ter seu valor inserido automaticamente pelo sistema-->
+    <p><label for="cTot">Preço Total: R$ <input type="text" name="tTot" id="cTot" placeholder="Valor total" readonly></label></p>
+</fieldset>
+
+
+<!--Para o botão eu utilizo o input e tipo, com o submit ele carrega um botão padrão em HTML e com o IMAGE
+eu posso inserir uma imagem de botão no caso que vai ter a mesma função-->
+<input type="image" name="tEnviar" src="botao-enviar.png">
+<!-- <input type="submit" value="enviar"> -->
+</form>
+
+<footer id="rodape">
+
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara
+    <br><a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | 
+    <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+    
+</footer>

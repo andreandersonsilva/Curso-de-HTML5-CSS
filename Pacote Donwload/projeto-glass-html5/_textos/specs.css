@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+section#conteudo{
+    width: 1000px;
+    margin: auto;
+}
+
+iframe#frame-spec{
+    width: 380px;
+    height: 280px;
+    /*Remover a borda*/
+    border:none;
+    /* overflow hidden não evita que funcione em todos os navegadores, mas evita que a rolagem aconteça*/
+    overflow:hidden;
+
+}
+

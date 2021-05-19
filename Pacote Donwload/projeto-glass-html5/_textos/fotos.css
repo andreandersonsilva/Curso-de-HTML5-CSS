@@ -1,0 +1,143 @@
+@charset "UTF-08";
+
+/* Configurando a UL*/
+ul#album-fotos{
+
+    width:700px;
+    margin:0 auto;
+    padding: 50px;
+    overflow: hidden;
+    list-style: none;
+}
+
+/* Configurando caixas no LI*/
+ul#album-fotos li{
+
+    float:left;
+    width:200px;
+    height:200px;
+    margin: 10px;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0,0,0.4);
+
+}
+
+/* ALterando cor / opacidade do texto dentro da imagem*/
+ul#album-fotos li span{
+    /* Trabalhando com o texto inserido dentro da imagem*/
+    opacity:0;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+    background-color: rgb(0,0,0,.3);
+    font-size: 9pt;
+    line-height: 370px;
+    padding: 5px;
+}
+
+/* Aqui foi criado o hover para todos os LI de uma unica vez, abrindo de imefiato uma JANELA MAIOR ampliando as 
+imagens ao passar o mouse por cima da imagem*/
+ul#album-fotos li:hover{
+    -webkit-transform: scale(1.5);
+    /* O efeito transition faz a imagem ampliar no tempo informado - sequencia: all (todos os efeitos) tempo .2 segundos
+    ease-in (forma do efeito, cresça, amplie de maneira suave) */
+    -webkit-transition: all .2s ease-in;
+}
+
+/* No código abaixo, toda vez que passar o mouse por cima da imagem o texto formatado acima vai aparecer*/
+
+ul#album-fotos li:hover span{
+    opacity:1;
+}
+
+/* Inserindo as imagens dentro das caixas*/
+/* OBS.: Não deixar espaço entre a URL e o () - NO-REPEAT faz com que a imagem não se repita
+BACKGROUND indica que a imagem sera inserida no fundo no caso do quadrado montado*/
+ul#album-fotos li#foto01{
+
+    background: url('galeria-01.jpg') no-repeat;
+    /*Abaixo é ajustado a imagem para melhorar o efeito
+    position vai deixar o que aparece da imagem no centro do quadrado, assim quando ampliar com o efeito ele vai ampliar 
+    a partir do centro da imagem fazendo o zoom completo de forma correta, a partir do centro*/
+    background-position: 50% 50%;
+    /*Inserindo o tamanho da imagem, no caso aqui é o tamanho original*/
+    background-size: 400px 400px;
+    /*Inserindo uma cor de fundo, no caso aqui é branco */
+    background-color: #ffffff;
+    /* Esta formatação é usada em todas as imagens individualmente*/
+}
+
+/* Aqui eu uso o hover para fazer com que ao passar o mouse na imagem com a configuração abaixo a imagem fique ajustada
+no quadro e ao retirar o mouse ele volte a imagem a posição em que estava */
+/* este processo deve ser feito em todas as imagens de forma individual */
+ul#album-fotos li#foto01:hover{
+    /* Aqui está ajustada a posição da imagem dentro do quadrado*/
+    background-position: 0px 0px;
+    /* Aqui a foto fica ajustada de acordo com o tamanho do quadrado que no exemplo é de 200px*/
+    background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto02{
+
+    background: url('galeria-02.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto02:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto03{
+
+    background: url('galeria-03.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto03:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto04{
+
+    background: url('galeria-04.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto04:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto05{
+
+    background: url('galeria-05.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto05:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+ul#album-fotos li#foto06{
+
+    background: url('galeria-06.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto06:hover{
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
